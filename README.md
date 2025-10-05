@@ -10,7 +10,7 @@ assignment 1
 - - [ ] Departments->Alumni is empty
 - - [x] Labs->Policy not working
 - - [x] Calendar->Academic Calendar not working
-- - [ ] Top bar-> Program sometimes changes to Bachelor program
+- - [x] Top bar-> Program sometimes changes to Bachelor program
 - - [ ] Calendar is effectively empty
 - [ ] Fix base site issues if present
 - - [ ] Departments->Fill exchange with content
