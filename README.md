@@ -12,7 +12,7 @@ assignment 1
 - - [x] Calendar->Academic Calendar not working
 - - [x] Top bar-> Program sometimes changes to Bachelor program
 - - [x] Calendar is effectively empty
-- [ ] Fix base site issues if present
-- - [ ] Departments->Fill exchange with content
+- [x] Fix base site issues if present
+- - [x] Departments->Fill exchange with content
 - [ ] Cosmetic site change
 - [ ] Technical site upgrade
