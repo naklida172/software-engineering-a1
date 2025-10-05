@@ -8,7 +8,7 @@ assignment 1
 - [x] Check base site`s workability
 - - [x] Departments->Exchange not working
 - - [ ] Departments->Alumni is empty
-- - [ ] Labs->Policy not working
+- - [x] Labs->Policy not working
 - - [x] Calendar->Academic Calendar not working
 - - [ ] Top bar-> Program sometimes changes to Bachelor program
 - - [ ] Calendar is effectively empty
