@@ -11,7 +11,7 @@ assignment 1
 - - [x] Labs->Policy not working
 - - [x] Calendar->Academic Calendar not working
 - - [x] Top bar-> Program sometimes changes to Bachelor program
-- - [ ] Calendar is effectively empty
+- - [x] Calendar is effectively empty
 - [ ] Fix base site issues if present
 - - [ ] Departments->Fill exchange with content
 - [ ] Cosmetic site change

@@ -175,6 +175,12 @@ nav {
 	text-shadow: 1px 1px 1px #fff;
 }
 
+#wrap-data {
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px;
+}
+
 #mission {
 	margin: 40px 0;
 }
