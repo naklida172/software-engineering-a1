@@ -16,5 +16,6 @@ assignment 1
 - - [x] Departments->Fill exchange with content
 - - [x] Department->Development page empty
 - - [x] Department->Prospective students empty
+- - [x] Bachelor->Research is filled
 - [ ] Cosmetic site change
 - [ ] Technical site upgrade
