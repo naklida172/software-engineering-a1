@@ -15,5 +15,6 @@ assignment 1
 - [x] Fix base site issues if present
 - - [x] Departments->Fill exchange with content
 - - [x] Department->Development page empty
+- - [x] Department->Prospective students empty
 - [ ] Cosmetic site change
 - [ ] Technical site upgrade
