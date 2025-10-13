@@ -1,426 +1,382 @@
 <!DOCTYPE html>
-
-
-
-<html>
-
-
-
-<head lang="eng">
-
+<html lang="en">
+<head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science | AIU</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-	<meta name="google-site-verification" content="lW7mBidUvlnn49dDaxeuASOO66bra2W4bRnbDgMtpFI" />
+    <!-- Modern Clean Style -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f9f9fb;
+            color: #333;
+            line-height: 1.7;
+        }
 
-          
+        a {
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
 
-	<title>Computer Science | AIU</title>
+        a:hover {
+            color: #0056b3;
+        }
 
+        /* HEADER */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-	<link rel="shortcut icon" href="images/favicon.png"/>
+        .navbar img {
+            height: 55px;
+        }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
 
+        .nav-links li {
+            position: relative;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+        .nav-links > li > a {
+            font-weight: 500;
+            color: #333;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s ease;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/text.css" />
+        .nav-links > li > a:hover {
+            background: #f3f3f3;
+            border-radius: 6px;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/960.css" />
+        /* DROPDOWN */
+        .nav-links li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+            min-width: 200px;
+            z-index: 999;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+        .nav-links li ul li {
+            list-style: none;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/nivo-slider.css"/>
+        .nav-links li ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            white-space: nowrap;
+            transition: background 0.3s;
+        }
 
-	<link rel="stylesheet" type="text/css" href="css/nivo-theme.css"/>	
+        .nav-links li ul li a:hover {
+            background: #f1f1f1;
+        }
 
+        /* Главное — чтобы меню не исчезало */
+        .nav-links li:hover > ul,
+        .nav-links li ul:hover {
+            display: block;
+        }
 
+        /* HERO */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('images/slider/slide1.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
 
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 1.1rem;
+        }
+
+        .hero a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: #00b67a;
+            color: white;
+            padding: 0.8rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .hero a:hover {
+            background: #009460;
+        }
+
+        /* CONTENT */
+        .content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .content h3 {
+            color: #00b67a;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* MISSION */
+        .mission {
+            background: #eaf9f3;
+            padding: 4rem 2rem;
+        }
+
+        .mission h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #00b67a;
+            margin-bottom: 2rem;
+        }
+
+        .mission-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .mission-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 2rem;
+            flex: 1 1 300px;
+        }
+
+        .mission-card h4 {
+            color: #00b67a;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            color: #444;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #00b67a;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+    </style>
 </head>
 
-
-
 <body>
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+        <a href="index.html"><img src="images/logo.png" alt="AIU Logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
 
-    <div id="container">
-
-
-
-    <!-- HEADER -->
-
-    <div id="header-wrap">
-
-
-
-        <div id="header" class="container_16">
-
-            <div id="logo" class="grid_5">
-
-                <img alt="Computer Science Department" src="images/logo.png" />
-
-            </div>
-
-            <!--Navigation-->
-
-            <div id="nav" class="grid_11">
-
+            <li>
+                <a href="javascript:void(0)">Department</a>
                 <ul>
-
-                    <li><a href="index.html">Home</a></li>
-
-                    <li>
-
-                        <a href="javascript:void(0)">Department</a>
-
-                        <ul id="department">
-
-                            <li><a href="department/news.html">News</a></li>
-
-                            <li><a href="department/developments.html">Developments</a></li>
-
-                            <li><a href="../department/exchange.html">Exchange Programs</a></li>
-
-                            <li><a href="department/prospective-students.html">Prospective Students</a></li>
-
-                            <li><a href="department/alumni.html">Alumni</a></li>
-
-                            <li><a href="department/contact-us.html" >Contact Us</a></li>
-
-                            <li><a href="department/info.html" >Info</a></li>
-
-                        </ul>
-
-                    </li>
-
-                    <li>
-
-                        <a href="javascript:void(0)">Bachelor Program</a>
-
-                        <ul id="program">
-
-                            <li><a href="program/courses.html">Courses</a></li>
-
-                            <li><a href="program/research.html">Research</a></li>
-
-                            <li><a href="program/degree-guide.html">Degree Guide</a></li>
-
-                            <li><a href="program/recent-diplomas.html">Recent Diplomas</a></li>
-
-                            <li><a href="program/exam_rules.html">Exam Rules</a></li>
-
-                            <li><a href="program/admission.html">Admission</a></li>
-
-                            <li><a href="program/faq.html">FAQ</a></li>
-
-                        </ul>
-
-                    </li>
-
-                    <li>
-
-                        <a href="javascript:void(0)">Master Degree</a>
-
-                        <ul id="master">
-
-                            <li><a href="grad/overview.html">Overview</a></li>
-
-                            <li><a href="grad/grad-courses.html">Program</a></li>
-
-                            <li><a href="grad/grad-research.html">Graduate Research</a></li>
-
-                            <li><a href="grad/grad-admission.html">Admission</a></li>
-
-                        </ul>
-
-                    </li>
-
-                    <li>
-
-                        <a href="javascript:void(0)" >Calendar</a>
-
-                        <ul id="calendar">
-
-                            <li><a href="../calendar/academic-calendar.html">Academic Calendar</a></li>
-
-                            <li><a href="calendar/schedule-of-lectures.html">Schedule of Lectures</a></li>
-
-                            <li><a href="calendar/midterms.html">Midterms Schedule</a></li>
-
-                            <li><a href="calendar/finals.html">Finals Schedule</a></li>
-
-                            <li><a href="calendar/labs.html">Labs Schedule</a></li>
-
-                        </ul>
-
-                    </li>
-
-                    <li>
-
-                        <a href="faculty/faculty.html">Faculty</a>
-
-                    </li>
-
-                    <li>
-
-                        <a href="labs/labs.html">Labs</a>
-
-                        <ul id="labs">
-
-                            <li><a href="../labs/policy.html">Policy &amp;
-
-                                Regulations</a></li>
-
-                            <li><a href="labs/software.html">Software</a></li>
-
-                            <li><a href="department/contact-us.html">Contacts</a></li>
-
-                        </ul>
-
-                    </li>
-
+                    <li><a href="department/news.html">News</a></li>
+                    <li><a href="department/developments.html">Developments</a></li>
+                    <li><a href="department/exchange.html">Exchange Programs</a></li>
+                    <li><a href="department/prospective-students.html">Prospective Students</a></li>
+                    <li><a href="department/alumni.html">Alumni</a></li>
+                    <li><a href="department/contact-us.html">Contact Us</a></li>
+                    <li><a href="department/info.html">Info</a></li>
                 </ul>
+            </li>
 
-            </div>
+            <li>
+                <a href="javascript:void(0)">Bachelor Program</a>
+                <ul>
+                    <li><a href="program/courses.html">Courses</a></li>
+                    <li><a href="program/research.html">Research</a></li>
+                    <li><a href="program/degree-guide.html">Degree Guide</a></li>
+                    <li><a href="program/recent-diplomas.html">Recent Diplomas</a></li>
+                    <li><a href="program/exam_rules.html">Exam Rules</a></li>
+                    <li><a href="program/admission.html">Admission</a></li>
+                    <li><a href="program/faq.html">FAQ</a></li>
+                </ul>
+            </li>
 
-        </div>
+            <li>
+                <a href="javascript:void(0)">Master Degree</a>
+                <ul>
+                    <li><a href="grad/overview.html">Overview</a></li>
+                    <li><a href="grad/grad-courses.html">Program</a></li>
+                    <li><a href="grad/grad-research.html">Graduate Research</a></li>
+                    <li><a href="grad/grad-admission.html">Admission</a></li>
+                </ul>
+            </li>
 
+            <li>
+                <a href="javascript:void(0)">Calendar</a>
+                <ul>
+                    <li><a href="calendar/academic-calendar.html">Academic Calendar</a></li>
+                    <li><a href="calendar/schedule-of-lectures.html">Schedule of Lectures</a></li>
+                    <li><a href="calendar/midterms.html">Midterms Schedule</a></li>
+                    <li><a href="calendar/finals.html">Finals Schedule</a></li>
+                    <li><a href="calendar/labs.html">Labs Schedule</a></li>
+                </ul>
+            </li>
+
+            <li><a href="faculty/faculty.html">Faculty</a></li>
+
+            <li>
+                <a href="labs/labs.html">Labs</a>
+                <ul>
+                    <li><a href="../labs/policy.html">Policy & Regulations</a></li>
+                    <li><a href="labs/software.html">Software</a></li>
+                    <li><a href="department/contact-us.html">Contacts</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
-
-	
-
-    <!-- CONTENT -->
-
-    <div id="wrap-content">
-
-	
-
-        <div id="content" class="container_16">
-
-	
-
-	        <div id="left-content">
-
-	
-
-    	    <div id="" class="grid_8 m-bottom m-top">
-
-			
-
-		<h3 class="m-bottom page-heading">What is Computer Science?</h3>
-
-		
-
-		<p class="main">
-
-			Computers and the Internet are having a great impact on human life and on society.  Our lives, starting in
-
-            the second half of the twentieth century, have become computerized "at the speed of light."  We now live in
-
-            times referred to as the computer age, the information age, or the Internet age.  The Computer Engineering
-
-            Department offers a unique opportunity for bright young minds to excel themselves in the areas of computer
-
-            science, computer software, and computer hardware.</p>
-
-
-
-		<a href="department/info.html" class="more-link f-right">Learn More &raquo;</a>
-
-
-
-	</div>
-
-
-
-    	    <div id="wrap-slider" class="grid_8 theme-effe">
-
-
-
-		<div id="slider" class="nivoSlider">
-
-			<a href=""><img src="images/slider/slide1.jpg" title="Welcome to Computer Science Department"/></a>
-
-			<a href=""><img src="images/slider/slide2.jpg"/></a>
-
-			<a href=""><img src="images/slider/slide3.jpg"/></a>
-
-		</div>
-
-
-
-	</div>
-
-
-
-	        <div id="mission" class="container_12 m-top f-left">
-
-	
-
-		    <div class="grid_4 m-bottom">
-
-			<h4>Our Vision</h4>
-
-	
-
-			<ul>
-
-				<li>to develop research projects that will receive international recognition</li>
-
-				<li>to engage our students in those projects that will enable them to find jobs easily all over the
-
-                    world</li>
-
-			</ul>
-
-		</div>
-
-		
-
-		    <div class="grid_4 m-bottom">
-
-			<h4>Our Mission</h4>
-
-	
-
-			<ul>
-
-				<li>to educate our students with state-of-the-art computer engineering knowledge that emphasizes both
-
-                    theoretical and practical aspects</li>
-
-				<li>to provide our students with the necessary computer engineering background that will enable them in
-
-                    finding jobs all over the world</li>
-
-				<li>to enrich our students with high moral and ethical values</li>
-
-				<li>to engage our students in social activities which will improve their leadership skills</li>
-
-			</ul>
-
-		</div>
-
-				
-
-		    <div class="grid_4 m-bottom">
-
-			<h4>Our Merits and Principles</h4>
-
-		
-
-			<ul>
-
-				<li>excellence in teaching and research</li>
-
-				<li>loyalty to ethical issues</li>
-
-				<li>professional and dedicated working habits</li>
-
-				<li>alert to technological changes</li>
-
-			</ul>
-
-		</div>
-
-	
-
-        </div>
-
-	
-
-	    </div>
-
-
-
-        </div>
-
-
-
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Welcome to Computer Science Department</h1>
+        <p>Empowering the next generation of innovators with knowledge in Computer Science, Software, and Engineering.</p>
+        <a href="department/info.html">Learn More →</a>
     </div>
+</section>
 
-    <!-- END OF CONTENT -->
-
-
-
-    <!-- FOOTER -->
-
-    <div id="footer-wrap" >
-
-		
-
-		<div id="footer" class="container_12">
-
-			<p class="f-left">&copy; 2017 Computer Science Department</p>
-            <p class="f-right">Ala-Too International University</p>
-
-		</div>
-
-	
-
-	</div>
-
-    <!-- END OF FOOTER -->
-
+<!-- CONTENT -->
+<section class="content">
+    <div>
+        <h3>What is Computer Science?</h3>
+        <p>
+            Computers and the Internet are having a great impact on human life and on society.
+            Our lives have become computerized at the speed of light.
+            The Computer Engineering Department offers a unique opportunity for bright young minds
+            to excel in computer science, software, and hardware.
+        </p>
     </div>
+    <div>
+        <img src="images/slider/slide2.jpg" alt="Computer Science" style="width:100%; border-radius: 15px;">
+    </div>
+</section>
 
+<!-- MISSION -->
+<section class="mission">
+    <h2>Our Vision, Mission & Principles</h2>
+    <div class="mission-container">
+        <div class="mission-card">
+            <h4>Our Vision</h4>
+            <ul>
+                <li>Develop research projects with international recognition</li>
+                <li>Engage students in globally relevant work</li>
+            </ul>
+        </div>
+        <div class="mission-card">
+            <h4>Our Mission</h4>
+            <ul>
+                <li>Educate students with cutting-edge computer engineering knowledge</li>
+                <li>Provide background for global job opportunities</li>
+                <li>Enrich students with moral and ethical values</li>
+                <li>Develop leadership through social engagement</li>
+            </ul>
+        </div>
+        <div class="mission-card">
+            <h4>Our Principles</h4>
+            <ul>
+                <li>Excellence in teaching and research</li>
+                <li>Loyalty to ethics</li>
+                <li>Professional and dedicated work habits</li>
+                <li>Alertness to technological changes</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-
-
-
-
-
-    <!-- Scripts -->
-
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-
-	<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
-
-	<script type="text/javascript" src="js/highlight.js"></script>
-
-		
-
-	<script type="text/javascript"> 
-
-	
-
-		$(window).load(function() {
-
-		    $("#slider").nivoSlider();
-
-		});
-
-
-
-	</script>
-
-	<!--Google-->
-
-	<script>
-
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-
-
-		  ga('create', 'UA-46202546-1', 'iaau.edu.kg');
-
-		  ga('send', 'pageview');
-
-	</script>
-
-	
-
+<!-- FOOTER -->
+<footer>
+    <p>&copy; <span>2025</span> Computer Science Department — Ala-Too International University</p>
+</footer>
 </body>
-
-
-
 </html>
