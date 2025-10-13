@@ -1,86 +1,94 @@
-.mosaic-block {
-	float: left;
-	position: relative;
-	overflow: hidden;
-	width: 138px !important;
-	height: 189px;
-	margin: 10px;
-	background: #111 url(../images/progress.gif) no-repeat center center;
-	border: 1px solid #f5f5f5;
-	box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
-	-o-box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
-	-webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+/* ===== Variables ===== */
+:root {
+    --mosaic-bg: #111;
+    --mosaic-border: #f5f5f5;
+    --mosaic-shadow: rgba(0,0,0,0.2);
+    --mosaic-text: #fff;
+    --mosaic-link: #eee;
+    --mosaic-hover: #33b5e5;
+    --transition-speed: 0.3s;
 }
 
-	.mosaic-backdrop {
-		display:none;
-		position:absolute;
-		top:0;
-		height:100%;
-		width:100%;
-		background:#111;
-	}
-	
-	.mosaic-overlay {
-		display:none;
-		z-index:5;
-		position:absolute;
-		width:100%;
-		height:100%;
-		background:#111;
-	}
-	
-		.circle .mosaic-overlay {
-			background:url(../images/hover-magnify.png) no-repeat center center;
-			opacity:0;
-			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
-			filter:alpha(opacity=00);
-			display:none;
-		}
-		
-		.fade .mosaic-overlay {
-			opacity:0;
-			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=00)";
-			filter:alpha(opacity=00);
-			background:url(../images/bg-black.png);
-		}
-		
-		.bar .mosaic-overlay {
-			bottom:-80px;
-			height:120px;
-			background:url(../images/bg-black.png);
-		}
-		
-.details{ 	
-	margin: 3px 4px;
-	height: 120px; 
-}	
-	.details h6{ 
-		color:#fff; 
-		text-shadow:1px 1px 0 rgb(0,0,0);
-		margin-bottom: 5px;
-		text-align: center;
-	}
-	.details p{ 
-		font: 1.2em 'Droid Sans', Tahoma, Verdana, sans-serif; 
-		color:#f9f9f9; 
-		text-shadow: none;
-		margin-bottom: 5px;
-		text-align: center;
-	}
-	.details a{ 
-		position: absolute;
-		font: 1.3em 'Droid Sans', Tahoma, Verdana, sans-serif; 
-		text-decoration:none;
-		color:#eee;
-		left: 45px;
-		bottom: 5px;
-		text-shadow: none;
-	}
-		.details:hover h6 {
-			color: #33b5e5;
-		}
-		.details a:hover {
-			text-decoration: underline;
-		}
+/* ===== Mosaic Block ===== */
+.mosaic-block {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width: 138px !important;
+    height: 189px;
+    margin: 10px;
+    background: var(--mosaic-bg) url(../images/progress.gif) no-repeat center center;
+    border: 1px solid var(--mosaic-border);
+    box-shadow: 0 0 3px 1px var(--mosaic-shadow);
+}
+
+/* ===== Overlay Elements ===== */
+.mosaic-backdrop,
+.mosaic-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--mosaic-bg);
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+    z-index: 5;
+}
+
+.circle .mosaic-overlay {
+    background: url(../images/hover-magnify.png) no-repeat center center;
+}
+
+.fade .mosaic-overlay,
+.bar .mosaic-overlay {
+    background: url(../images/bg-black.png) no-repeat center center;
+}
+
+.bar .mosaic-overlay {
+    bottom: -80px;
+    height: 120px;
+}
+
+/* ===== Details ===== */
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 3px 4px;
+    height: 120px;
+    position: relative;
+}
+
+.details h6 {
+    color: var(--mosaic-text);
+    text-shadow: 1px 1px 0 rgb(0,0,0);
+    margin-bottom: 5px;
+    text-align: center;
+    transition: color var(--transition-speed) ease;
+}
+
+.details p {
+    font: 1.2em 'Droid Sans', Tahoma, Verdana, sans-serif;
+    color: var(--mosaic-text);
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.details a {
+    font: 1.3em 'Droid Sans', Tahoma, Verdana, sans-serif;
+    text-decoration: none;
+    color: var(--mosaic-link);
+    position: relative;
+    bottom: 5px;
+    transition: color var(--transition-speed) ease, text-decoration var(--transition-speed) ease;
+}
+
+.details:hover h6 {
+    color: var(--mosaic-hover);
+}
+
+.details a:hover {
+    text-decoration: underline;
+}
