@@ -1,0 +1,108 @@
+
+/* Общие сбросы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+/* HEADER */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* NAVBAR */
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff; /* или #111 если нужна тёмная версия */
+}
+
+.navbar img {
+    height: 55px;
+}
+
+/* Главные ссылки */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links > li > a {
+    font-weight: 500;
+    color: #333; /* основной цвет текста */
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-links > li > a:hover {
+    background: #f3f3f3;
+    border-radius: 6px;
+}
+
+/* Dropdown меню */
+.nav-links li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    min-width: 220px;
+    z-index: 999;
+}
+
+.nav-links li ul li {
+    list-style: none;
+}
+
+.nav-links li ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.nav-links li ul li a:hover {
+    background: #eaf9f3; /* зелёный оттенок hover как на index.html */
+}
+
+/* Главное — меню держится пока курсор на элементе */
+.nav-links li:hover > ul,
+.nav-links li ul:hover {
+    display: block;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
