@@ -1,70 +1,103 @@
-.st-accordion{
-	width: 940px;
+/* ===== Variables ===== */
+:root {
+    --accordion-text: #708090;
+    --accordion-hover: #1693eb;
+    --accordion-border: #eee;
+    --accordion-border-top: #fff;
+    --accordion-transition: all 0.3s ease;
 }
 
-.st-accordion ul li{
-    border-bottom: 1px solid #eee;
-    border-top:1px solid #fff;
+/* ===== Accordion Container ===== */
+.st-accordion {
+    width: 940px;
+    margin: 0 auto;
+}
+
+/* ===== Accordion Items ===== */
+.st-accordion ul li {
+    border-bottom: 1px solid var(--accordion-border);
+    border-top: 1px solid var(--accordion-border-top);
     overflow: hidden;
-	list-style-type: none;
-}
-.st-accordion ul li:first-child{
-    border-top:none;
-}
-.st-accordion ul li > a{
-	font-size: 1.5em;
-    display: block;
-	position: relative;
-    line-height: 2.5em;
-	outline:none;
-	text-decoration: none;
-	color: #708090;
-	text-align: center;
-    -webkit-transition:  color 0.4s ease-in-out;
-	-moz-transition:  color 0.2s ease-in-out;
-	-o-transition:  color 0.2s ease-in-out;
-	-ms-transition:  color 0.2s ease-in-out;
-	transition:  color 0.2s ease-in-out;
-}
-.st-accordion ul li > a span{
-	background: transparent url(../images/down.png) no-repeat center center;
-	text-indent:-9000px;
-	width: 26px;
-	height: 14px;
-	position: absolute;
-	top: 50%;
-	right: -26px;
-	margin-top: -7px;
-	opacity:0;
-	-webkit-transition:  all 0.2s ease-in-out;
-	-moz-transition:  all 0.2s ease-in-out;
-	-o-transition:  all 0.2s ease-in-out;
-	-ms-transition:  all 0.2s ease-in-out;
-	transition:  all 0.2s ease-in-out;
-}
-.st-accordion ul li > a:hover{
-    color: #1693eb;
-}
-.st-accordion ul li > a:hover span{
-	opacity:1;
-	right: 10px;
-}
-.st-accordion ul li.st-open > a{
-    color: #1693eb;
-}
-.st-accordion ul li.st-open > a span{
-	-webkit-transform:rotate(180deg);
-	-moz-transform:rotate(180deg);
-    transform:rotate(180deg);
-	right:10px;
-	opacity:1;
-}
-.st-content{
-    padding: 5px 0px;
+    list-style-type: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-@media screen and (max-width: 320px){
-	.st-accordion ul li > a{
-		font-size:36px;
-	}
+.st-accordion ul li:first-child {
+    border-top: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.st-accordion ul li:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* ===== Accordion Links ===== */
+.st-accordion ul li > a {
+    font-size: 1.5em;
+    display: block;
+    position: relative;
+    line-height: 2.5em;
+    outline: none;
+    text-decoration: none;
+    color: var(--accordion-text);
+    text-align: center;
+    cursor: pointer;
+    transition: var(--accordion-transition);
+}
+
+.st-accordion ul li > a:hover {
+    color: var(--accordion-hover);
+}
+
+/* ===== Accordion Arrow ===== */
+.st-accordion ul li > a span {
+    background: transparent url(../images/down.png) no-repeat center center;
+    text-indent: -9000px;
+    width: 26px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    margin-top: -7px;
+    opacity: 0;
+    transition: var(--accordion-transition);
+}
+
+.st-accordion ul li > a:hover span {
+    opacity: 1;
+    right: 10px;
+}
+
+.st-accordion ul li.st-open > a {
+    color: var(--accordion-hover);
+}
+
+.st-accordion ul li.st-open > a span {
+    transform: rotate(180deg);
+    right: 10px;
+    opacity: 1;
+}
+
+/* ===== Accordion Content ===== */
+.st-content {
+    padding: 5px 0;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    .st-accordion {
+        width: 100%;
+    }
+    .st-accordion ul li > a {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .st-accordion ul li > a {
+        font-size: 1em;
+        line-height: 2em;
+    }
 }
